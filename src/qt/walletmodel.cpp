@@ -232,9 +232,9 @@ WalletModel::SendCoinsReturn WalletModel::prepareTransaction(WalletModelTransact
         // Reject absurdly high fee. (This can never happen because the
         // wallet never creates transactions with fee greater than
         // m_default_max_tx_fee. This merely a belt-and-suspenders check).
-        if (nFeeRequired > m_wallet->getDefaultMaxTxFee()) {
-            return AbsurdFee;
-        }
+        //if (nFeeRequired > m_wallet->getDefaultMaxTxFee()) {
+        //    return AbsurdFee;
+        //}
     } catch (const std::runtime_error& err) {
         // Something unexpected happened, instruct user to report this bug.
         Q_EMIT message(tr("Send Coins"), QString::fromStdString(err.what()),
