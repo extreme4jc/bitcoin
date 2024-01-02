@@ -1290,9 +1290,6 @@ static util::Result<CreatedTransactionResult> CreateTransactionInternal(
         return util::Error{_("Transaction too large")};
     }
 
-    if (current_fee > wallet.m_default_max_tx_fee) {
-        return util::Error{TransactionErrorString(TransactionError::MAX_FEE_EXCEEDED)};
-    }
 
     if (gArgs.GetBoolArg("-walletrejectlongchains", DEFAULT_WALLET_REJECT_LONG_CHAINS)) {
         // Lastly, ensure this tx will pass the mempool's chain limits
