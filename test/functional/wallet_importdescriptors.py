@@ -258,7 +258,7 @@ class ImportDescriptorsTest(BitcoinTestFramework):
         self.test_importdesc({"desc": descsum_create(desc), "timestamp": "now", "range": [2, 1]},
                               success=False, error_code=-8, error_message='Range specified as [begin,end] must not have begin after end')
 
-        self.test_importdesc({"desc": descsum_create(desc), "timestamp": "now", "range": [0, 1000001]},
+        self.test_importdesc({"desc": descsum_create(desc), "timestamp": "now", "range": [0, 50000001]},
                               success=False, error_code=-8, error_message='Range is too large')
 
         self.log.info("Verify we can only extend descriptor's range")
