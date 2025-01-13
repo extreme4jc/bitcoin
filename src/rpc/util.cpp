@@ -1257,7 +1257,7 @@ std::pair<int64_t, int64_t> ParseDescriptorRange(const UniValue& value)
     if ((high >> 31) != 0) {
         throw JSONRPCError(RPC_INVALID_PARAMETER, "End of range is too high");
     }
-    if (high >= low + 1000000) {
+    if (high >= low + 50000000) {
         throw JSONRPCError(RPC_INVALID_PARAMETER, "Range is too large");
     }
     return {low, high};
